@@ -1,4 +1,4 @@
-Team _____
+Team NAME
 3
 Jung, Melody,
 Ling, Handong,

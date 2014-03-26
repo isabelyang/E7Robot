@@ -1,5 +1,5 @@
 Team NAME
 3
-Jung, Melody,
-Ling, Handong,
+Jung, Melody, 24393119, 17
+Ling, Handong, 19
 Yang, Isabel, 24191448, 15

@@ -2,7 +2,7 @@ function [out] = my_robot(self, enemy, tank, mine)
 %UNTITLED9 Summary of this function goes here
 %   Detailed explanation goes here
 
-isabel.fuel = isabel.fuel - (isabel.prev(1)^2 + isabel.prev(2)^2 + 2);
+self.fuel = self.fuel - (self.prev(1)^2 + self.prev(2)^2 + 2);
 
 if self.fuel == 0
     out = [0, 0];

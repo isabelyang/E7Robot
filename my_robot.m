@@ -4,7 +4,7 @@ function [out] = my_robot(self, enemy, tank, mine)
 
 self.fuel = self.fuel - (self.prev(1)^2 + self.prev(2)^2 + 2);
 
-if self.fuel == 0
+if self.fuel == 1
     out = [0, 0];
 end
 

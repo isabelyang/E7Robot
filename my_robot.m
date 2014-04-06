@@ -60,13 +60,13 @@ else
     out = [dx, dy];
     
 end
-        function [x,y] = radius(tanks)
+        function [x,y] = radius(tanks, r)
             A = [];
             B = [];
             C = [];
             for k = 1:length(tanks.pos)
                 for j = 1:length(tanks.pos)
-                    if sqrt(sum((tanks.pos(j,:) - tanks.pos(k,:)).^2)) <= 25
+                    if sqrt(sum((tanks.pos(j,:) - tanks.pos(k,:)).^2)) <= r
                         A = [A;tanks.val(j)];
                         B = [B; sum(A)];
                         C = [C; tanks.pos(j,:)];

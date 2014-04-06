@@ -60,5 +60,34 @@ else
     out = [dx, dy];
     
 end
+        function [x,y] = radius(tanks)
+A = [];
+B = [];
+C = [];
+for i = 1:length(tanks.pos)
+    for j = 1:length(tanks.pos)
+        if sqrt(sum((tanks.pos(j,:) - tanks.pos(i,:)).^2)) <= 25
+            A = [A;tanks.val(j)];
+            B = [B; sum(A)];
+            C = [C; tanks.pos(j,:)];
+            A = [];
+        end 
+    end
+end
 
+maxB = max(B);
+ind=1;
+for i=1:length(B) 
+    if B(i)==maxB
+        ind=i;
+    end
+end
+
+position = C(ind,:);        
+
+
+
+x = position(1);
+y = position(2);
+        end
 end

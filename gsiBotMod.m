@@ -1,26 +1,15 @@
-function [out] = my_robot(self, enemy, tank, mine)
-%UNTITLED9 Summary of this function goes here
-%   Detailed explanation goes here
+function [out] = gsiBot(self, enemy, tank, mine)
+%
+% test robot for students during E7 robot tournament. Feel free to use this
+% code to get your started.
+%
+% note that a robot of this caliber will not be competitive in the final
+% tournament. the robots in the tournament will be much stronger.
+%
 
-%{
-    function d = distance(x1, y1, x2, y2)
-        d = sqrt( (x1 - x2 ) ^2 + (y1 - y2)^2);
-    end
-
-dTank = distance(self.pos(1), self.pos(2), tank.pos(1), tank.pos(2));
-    
-if dTank > 2 && dTank <= 5
-    beforeGas = self.fuel
-end
-
-if dTank <= 2
-    afterGas = self.fuel
-end
-%}
-
-%GSI BOT
-params.speed_fuel = 2;
-params.speed_end = 2.5;
+% set up parameters for robot
+params.speed_fuel = 3;
+params.speed_end = 3;
 
 if ~isempty(tank)
     
@@ -61,4 +50,5 @@ else
     
 end
 
-end
+end % end gsiBot
+

@@ -53,14 +53,14 @@ end
 
     end
 
-params.speed_fuel = 2;
-params.speed_end = 2.5;
+params.speed_fuel = 3;
+params.speed_end = 3;
 
     if ~isempty(tank)
 
         % start d at infinity
-        d = inf;
-        I = 0;
+        %d = inf;
+        %I = 0;
 
         % loop through fuel tanks checking if current fuel tank is
         % closer than previous closest.
@@ -76,10 +76,15 @@ params.speed_end = 2.5;
         end
         %}
 
+        
+        tankPos = radius(tank, 25);
         % make movement towards closest fuel tank
-        dx = (params.speed_fuel/d)*(tank(I).pos(1)-self.pos(1));
-        dy = (params.speed_fuel/d)*(tank(I).pos(2)-self.pos(2));
-
+        %dx = (params.speed_fuel/d)*(tank(I).pos(1)-self.pos(1));
+        %dy = (params.speed_fuel/d)*(tank(I).pos(2)-self.pos(2));
+        d = norm(tankPos - self.pos);
+        dx = (params.speed_fuel/d)*(tankPos(1)-self.pos(1));
+        dy = (params.speed_fuel/d)*(tankPos(2)-self.pos(2));
+        
         % assign output
         out = [dx, dy];
 
